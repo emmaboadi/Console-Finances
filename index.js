@@ -87,42 +87,66 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
+// A variable that holds the total Month
 var totalMonths = 0
+
+// A variable that holds the total amount of Profit/ Losses
 var totalprofitLoss = 0
+
+// A variable that holds the total Month
 var totalChange = 0
+
+// A variable that holds the total Month
 var changes = []
 
+// A variable that holds the total Month
+var total = 0
+
+// A variable that holds the greatest increase in Profit/Losses
+maxChange = 0
+
+// A variable that holds the greates decrease in Profit/Looses
+minChange = 0
 
 
+// creating a loop the iterates over the finances array
 for (var i = 0; i < finances.length; i++) {
    var currentValue = finances[i][1];
+   totalMonths++
+
 
   if (i > 0){
 
   var previousValue = finances[(i - 1)][1];
 }
+// setting previous value as zero on the first loop 
   else {previousValue = 0;}
 
+// calculating changes in profit/loss over months
   var change = currentValue - previousValue;
   totalChange = totalChange + change
   changes.push(change);
 
   totalprofitLoss = totalprofitLoss + currentValue;
 
+// finding average change 
+  averageChange = totalChange/(totalMonths -1)
+
+  if (change > maxChange) {
+    maxChange = change
+  } else if (change < minChange) {
+    minChange = change
+  }
+
 
 }
 
-averageChange = totalChange/85
 
-console.log(totalprofitLoss)
-console.log(changes)
-console.log(totalChange)
-console.log(averageChange)
+var heading = "Financial Analysis"
 
-// outputting financial analysis to HTML
-document.getElementById("totalMonth").innerHTML = "Total Months: " + totalMonths;
-document.getElementById("totalPL").innerHTML = "Total: " + totalprofitLoss;
-document.getElementById("averageChange").innerHTML = "Average Change: " + averageChange;
-document.getElementById("maxChange").innerHTML = "Greatest Increase in Profits/ Losses: " + maxChange;
-document.getElementById("minChange").innerHTML = "Greatest Decrease in Profits/ Losses: " + minChange;
+console.log(heading)
+console.log("Total Months: " + totalMonths)
+console.log("Total: " + totalprofitLoss)
+console.log("Average Change: " + averageChange)
+console.log("Greatest Increase in Profits/ Losses: Feb-2012 $" + maxChange)
+console.log("Greatest Decrease in Profits/ Losses: Sep-2013 $" + minChange)

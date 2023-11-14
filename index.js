@@ -119,3 +119,10 @@ console.log(totalprofitLoss)
 console.log(changes)
 console.log(totalChange)
 console.log(averageChange)
+
+// outputting financial analysis to HTML
+document.getElementById("totalMonth").innerHTML = "Total Months: " + totalMonths;
+document.getElementById("totalPL").innerHTML = "Total: " + totalprofitLoss;
+document.getElementById("averageChange").innerHTML = "Average Change: " + averageChange;
+document.getElementById("maxChange").innerHTML = "Greatest Increase in Profits/ Losses: " + maxChange;
+document.getElementById("minChange").innerHTML = "Greatest Decrease in Profits/ Losses: " + minChange;

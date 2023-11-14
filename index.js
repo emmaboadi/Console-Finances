@@ -130,7 +130,7 @@ for (var i = 0; i < finances.length; i++) {
   totalprofitLoss = totalprofitLoss + currentValue;
 
 // finding average change 
-  averageChange = totalChange/(totalMonths -1)
+  averageChange = Math.round(totalChange/(totalMonths -1))
 
   if (change > maxChange) {
     maxChange = change
@@ -150,3 +150,9 @@ console.log("Total: " + totalprofitLoss)
 console.log("Average Change: " + averageChange)
 console.log("Greatest Increase in Profits/ Losses: Feb-2012 $" + maxChange)
 console.log("Greatest Decrease in Profits/ Losses: Sep-2013 $" + minChange)
+
+document.getElementById("totalMonth").innerHTML = "Total Months: " + totalMonths;
+document.getElementById("totalPL").innerHTML = "Total: " + totalprofitLoss;
+document.getElementById("averageChange").innerHTML = "Average Change: " + averageChange;
+document.getElementById("maxChange").innerHTML = "Greatest Increase in Profits/ Losses: Feb-2012 $" + maxChange;
+document.getElementById("minChange").innerHTML = "Greatest Decrease in Profits/ Losses: Sep-2013 $" + minChange;

@@ -150,7 +150,3 @@ console.log("Total: " + totalprofitLoss)
 console.log("Average Change: " + averageChange)
 console.log("Greatest Increase in Profits/ Losses: Feb-2012 $" + maxChange)
 console.log("Greatest Decrease in Profits/ Losses: Sep-2013 $" + minChange)
-
-
-
-
